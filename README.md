@@ -1,4 +1,4 @@
-# 🌐 Projeto Final: GlobalDocs – Acompanhamento Multilíngue de Pedidos
+# 🌐 GlobalDocs – Acompanhamento Multilíngue de Pedidos
 
 ## 📚 Descrição
 Sistema Django que permite o cadastro e acompanhamento de pedidos internacionais, com foco em recursos avançados: envio de e-mail, signals, middleware, testes, i18n, fixtures, serviço, uso de variáveis de ambiente e preparo para deploy.
