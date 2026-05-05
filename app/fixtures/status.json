@@ -1,0 +1,34 @@
+[
+  {
+    "model": "core.status",
+    "pk": 1,
+    "fields": {
+      "nome": "Pendente",
+      "codigo": "pendente"
+    }
+  },
+  {
+    "model": "core.status",
+    "pk": 2,
+    "fields": {
+      "nome": "Em progresso",
+      "codigo": "em_progresso"
+    }
+  },
+  {
+    "model": "core.status",
+    "pk": 3,
+    "fields": {
+      "nome": "Concluído",
+      "codigo": "concluido"
+    }
+  },
+  {
+    "model": "core.status",
+    "pk": 4,
+    "fields": {
+      "nome": "Cancelado",
+      "codigo": "cancelado"
+    }
+  }
+]

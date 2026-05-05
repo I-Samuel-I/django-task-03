@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 
@@ -26,6 +27,6 @@ class PedidoCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('lista_pedidos')
 
     def form_valid(self, form):
-        PedidoService.criar_pedido(self.request.user, form)
+        self.object = PedidoService.criar_pedido(self.request.user, form)
         messages.success(self.request, "Pedido criado com sucesso.")
-        return super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())

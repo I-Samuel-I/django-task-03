@@ -12,6 +12,3 @@ logger = logging.getLogger('globaldocs')
 def notificar_criacao_pedido(sender, instance, created, **kwargs):
     if created:
         logger.info(f"Pedido criado: {instance.titulo} por {instance.usuario.email}")
-        # Envia o e-mail apenas se o serviço ainda não o tiver feito na view
-        # (alternativamente, pode-se omitir da view e deixar só aqui)
-        # PedidoService.enviar_email_confirmacao(instance)

@@ -1,12 +1,12 @@
 from django.conf import settings
 from django.db import models
 
-STATUS_CHOICES = [
-    ('pendente', 'Pendente'),
-    ('em_progresso', 'Em progresso'),
-    ('concluido', 'Concluído'),
-    ('cancelado', 'Cancelado'),
-]
+class Status(models.Model):
+    nome = models.CharField(max_length=50)
+    codigo = models.CharField(max_length=30, unique=True)
+
+    def __str__(self):
+        return self.nome
 
 
 def upload_path(instance, filename):
@@ -14,6 +14,13 @@ def upload_path(instance, filename):
 
 
 class Pedido(models.Model):
+    STATUS_CHOICES = [
+        ('pendente', 'Pendente'),
+        ('em_progresso', 'Em progresso'),
+        ('concluido', 'Concluído'),
+        ('cancelado', 'Cancelado'),
+    ]
+
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=200)
     descricao = models.TextField(blank=True)
